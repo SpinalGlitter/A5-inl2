@@ -68,7 +68,7 @@ async function loadMovies() {
   });
 }
 
-async function loadHeadline() {
+async function loadMovieHeadline() {
   const response = await fetch('data/moviesHeadline.json');
   if (!response.ok) {
     throw new Error(`HTTP-error! Status: ${response.status}`);
@@ -79,5 +79,7 @@ async function loadHeadline() {
   headerElement.textContent = data.HeadlineText;
 }
 
-loadHeadline();
-loadMovies();
+export async function loadMovieContent() {
+  loadMovieHeadline();
+  loadMovies();
+}
