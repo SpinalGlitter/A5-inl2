@@ -1,5 +1,5 @@
 async function loadJSON() {
-  const response = await fetch('../../data/infoModal.json');
+  const response = await fetch('/data/infoModal.json');
   const data = await response.json();
   return data;
 }
