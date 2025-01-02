@@ -1,3 +1,4 @@
+import { getBasePath } from '../utils';
 async function fetchAboutJson() {
   const res = await fetch('../../data/about.json');
   const data = await res.json();
