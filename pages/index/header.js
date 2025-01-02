@@ -75,12 +75,13 @@ function createNavigation(headerData) {
     const menuItem = document.createElement('li');
     const menuLink = document.createElement('a');
     //Using a switch that adds the href attribute depending on the link text. This can be updated when we get more webpages online.
+    const basePath = '/Kino_Group_Project';
     switch (link.text) {
       case 'Om oss':
-        menuLink.href = '/pages/about/about.html';
+        menuLink.href = `${basePath}/pages/about/about.html`;
         break;
       case 'Barnkalas':
-        menuLink.href = '/pages/kids/kids.html';
+        menuLink.href = `${basePath}/pages/kids/kids.html`;
         break;
       default:
         menuLink.href = '#';
