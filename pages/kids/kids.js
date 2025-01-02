@@ -2,7 +2,7 @@ const screenWidth = screen.width;
 
 async function loadEvent() {
   try {
-    const responseEvent = await fetch('../../data/barnkalasEvent.json');
+    const responseEvent = await fetch('/data/barnkalasEvent.json');
 
     if (!responseEvent.ok) {
       throw new Error('Could not fetch data');

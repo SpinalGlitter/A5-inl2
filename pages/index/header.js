@@ -1,6 +1,6 @@
 //Getting the JSON file header.json and its data.
 async function fetchHeaderData() {
-  const response = await fetch('../../data/header.json');
+  const response = await fetch('/data/header.json');
   const headerData = await response.json();
   return headerData;
 }

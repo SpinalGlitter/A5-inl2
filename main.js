@@ -1,3 +1,4 @@
+import './style.scss';
 import { initHeader } from './pages/index/header.js';
 import { loadkids } from './pages/kids/kids.js';
 import { loadMovieContent } from './pages/index/movies.js';
