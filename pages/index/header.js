@@ -10,6 +10,7 @@ async function fetchHeaderData() {
 }
 //This function uses the data and creates the elements for the header.
 function createNavigation(headerData) {
+  const basePath = '/Kino_Group_Project';
   const navigationContainer = document.querySelector('#navigation-menu');
 
   //Creates a nav element
@@ -21,7 +22,7 @@ function createNavigation(headerData) {
   leftSection.className = 'nav-left';
 
   const logoLink = document.createElement('a');
-  logoLink.href = '/index.html';
+  logoLink.href = `${basePath}/index.html`;
 
   const logo = document.createElement('img');
   const imagePath = window.location.pathname.includes('/pages/') ? '../../' : './';
@@ -32,7 +33,7 @@ function createNavigation(headerData) {
   logoLink.appendChild(logo);
 
   const brandNameLink = document.createElement('a');
-  brandNameLink.href = '/index.html';
+  brandNameLink.href = `${basePath}/index.html`;
 
   const brandName = document.createElement('span');
   brandName.className = 'brand-name';
@@ -80,7 +81,7 @@ function createNavigation(headerData) {
     const menuItem = document.createElement('li');
     const menuLink = document.createElement('a');
     //Using a switch that adds the href attribute depending on the link text. This can be updated when we get more webpages online.
-    const basePath = '/Kino_Group_Project';
+
     switch (link.text) {
       case 'Om oss':
         menuLink.href = `${basePath}/pages/about/about.html`;
