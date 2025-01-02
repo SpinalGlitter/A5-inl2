@@ -23,10 +23,10 @@ const renderMovies = (movies) => {
     const movieDiv = document.createElement('div');
     movieDiv.classList.add('movie');
 
-    movieDiv.innerHTML = `
+    movieDiv.innerHTML = `<div class="movie-card">
       <img src="/pages/img/Movieimg.png" alt="${movie.Titel} Poster">
-      <h3>${movie.Titel}</h3>
-      <p>Genre: ${movie.Genre}</p>
+      <h3 class="movie-headline">${movie.Titel}</h3>
+      <p class="genre">${movie.Genre}</p></div>
     `;
 
     movieContainer.appendChild(movieDiv);
