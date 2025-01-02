@@ -1,5 +1,5 @@
 import { initHeader } from './pages/index/header.js';
-import { loadkids } from './pages/kids/kids.js';
+import { loadkids } from './pages/index/kids.js';
 
 initHeader();
 

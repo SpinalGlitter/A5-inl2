@@ -1,6 +1,10 @@
 //Getting the JSON file header.json and its data.
 async function fetchHeaderData() {
-  const response = await fetch('/data/header.json');
+  // Enkel check om vi är på en undersida
+  const isSubPage = window.location.pathname.includes('/pages/');
+  const path = window.location.pathname.includes('/pages/') ? '../../data/header.json' : './data/header.json';
+
+  const response = await fetch(path);
   const headerData = await response.json();
   return headerData;
 }
@@ -20,7 +24,8 @@ function createNavigation(headerData) {
   logoLink.href = '/index.html';
 
   const logo = document.createElement('img');
-  logo.src = headerData.header.mainHeader.logo;
+  const imagePath = window.location.pathname.includes('/pages/') ? '../../' : './';
+  logo.src = imagePath + headerData.header.mainHeader.logo;
   logo.alt = headerData.header.mainHeader.alt;
   logo.className = 'nav-logo';
 
@@ -61,7 +66,7 @@ function createNavigation(headerData) {
   menuOverlay.appendChild(closeBtn);
 
   const overlayLogo = document.createElement('img');
-  overlayLogo.src = headerData.header.hamburgerMenu.menuLogo;
+  overlayLogo.src = imagePath + headerData.header.hamburgerMenu.menuLogo;
   overlayLogo.alt = headerData.header.mainHeader.alt;
   overlayLogo.className = 'overlay-logo';
 

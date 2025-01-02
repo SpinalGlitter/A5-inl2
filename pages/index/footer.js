@@ -1,6 +1,9 @@
 (async function startFooter() {
   try {
-    const response = await fetch('/data/footer.json');
+    const isSubPage = window.location.pathname.includes('/pages/');
+    const path = isSubPage ? '../../data/footer.json' : './data/footer.json';
+    const imagePath = isSubPage ? '../../' : './';
+    const response = await fetch(path);
     const data = await response.json();
     const footer = document.querySelector('.footer-container');
 
@@ -32,7 +35,7 @@
 
           if (link.icon) {
             const icon = document.createElement('img');
-            icon.src = link.icon;
+            icon.src = imagePath + link.icon;
             icon.alt = `${link.text || link.name} icon`;
             icon.classList.add('footer-icon');
             li.append(icon);
@@ -74,7 +77,7 @@
     footer.append(span);
 
     const logo = document.createElement('img');
-    logo.src = data.footer.logo;
+    logo.src = imagePath + data.footer.logo;
     logo.alt = 'Kino Bio Logo';
     logo.classList.add('footer-logo');
     span.append(logo);

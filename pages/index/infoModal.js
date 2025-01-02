@@ -1,11 +1,14 @@
 async function loadJSON() {
-  const response = await fetch('/data/infoModal.json');
+  const isSubPage = window.location.pathname.includes('/pages/');
+  const path = isSubPage ? '../../data/infoModal.json' : './data/infoModal.json';
+  const imagePath = isSubPage ? '../../' : './';
+  const response = await fetch(path);
   const data = await response.json();
-  return data;
+  return { data, imagePath };
 }
 
 export async function buildDoc() {
-  const data = await loadJSON();
+  const { data, imagePath } = await loadJSON();
   // DOM elements
   const modal = document.querySelector('.info-modal');
   const list = document.querySelector('.info-modal-list');
@@ -29,7 +32,7 @@ export async function buildDoc() {
     const openPara = document.createElement('p');
     openTitle.innerText = openSection[3].title;
     openPara.innerText = openSection[3].text;
-    img.src = data.kinoImg.src;
+    img.src = imagePath + data.kinoImg.src;
     img.alt = data.kinoImg.alt;
     const openTimeDiv = document.createElement('div');
     openTimeDiv.appendChild(openTitle);
@@ -85,7 +88,7 @@ export async function buildDoc() {
       question.innerText = section.title;
       answer.innerText = section.text;
       answer.style.display = 'none';
-      openBtn.src = data.buttons[0].openButton;
+      openBtn.src = imagePath + data.buttons[0].openButton;
       openBtn.alt = data.buttons[0].alt;
       // Append to list
       listItem.appendChild(openBtn);
@@ -94,11 +97,11 @@ export async function buildDoc() {
       openBtn.addEventListener('click', () => {
         openBtn.classList.toggle('open-button-clicked');
         if (openBtn.className === 'modal-open open-button-clicked') {
-          openBtn.src = data.buttons[1].closeButton;
+          openBtn.src = imagePath + data.buttons[1].closeButton;
           openBtn.alt = data.buttons[1].alt;
           answer.style.display = '';
         } else {
-          openBtn.src = data.buttons[0].openButton;
+          openBtn.src = imagePath + data.buttons[0].openButton;
           openBtn.alt = data.buttons[0].alt;
           answer.style.display = 'none';
         }
@@ -106,11 +109,11 @@ export async function buildDoc() {
       question.addEventListener('click', () => {
         openBtn.classList.toggle('open-button-clicked');
         if (openBtn.className === 'modal-open open-button-clicked') {
-          openBtn.src = data.buttons[1].closeButton;
+          openBtn.src = imagePath + data.buttons[1].closeButton;
           openBtn.alt = data.buttons[1].alt;
           answer.style.display = '';
         } else {
-          openBtn.src = data.buttons[0].openButton;
+          openBtn.src = imagePath + data.buttons[0].openButton;
           openBtn.alt = data.buttons[0].alt;
           answer.style.display = 'none';
         }
