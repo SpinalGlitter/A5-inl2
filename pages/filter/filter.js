@@ -3,7 +3,7 @@ let movies = [];
 
 const fetchMovies = async () => {
   try {
-    const response = await fetch('/data/movies.json');
+    const response = await fetch('./data/movies.json');
     if (!response.ok) {
       throw new Error(`HTTP ERROR: ${response.status}`);
     }
