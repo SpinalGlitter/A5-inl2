@@ -9,7 +9,7 @@
     "Skådespelare": ["Leonardo DiCaprio", " Joseph Gordon-Levitt", " Elliot Page"],
     "Språk": "Engelska",
     "Längd": 148,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -22,7 +22,7 @@
     "Skådespelare": ["Song Kang-ho", " Lee Sun-kyun", " Cho Yeo-jeong"],
     "Språk": "Koreanska",
     "Längd": 132,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -35,7 +35,7 @@
     "Skådespelare": ["Christian Bale", " Heath Ledger", " Aaron Eckhart"],
     "Språk": "Engelska",
     "Längd": 152,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -48,7 +48,7 @@
     "Skådespelare": ["Matthew McConaughey", " Anne Hathaway", " Jessica Chastain"],
     "Språk": "Engelska",
     "Längd": 169,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -61,7 +61,7 @@
     "Skådespelare": ["Rumi Hiiragi", " Miyu Irino", " Mari Natsuki"],
     "Språk": "Japanska",
     "Längd": 125,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -74,7 +74,7 @@
     "Skådespelare": ["Marlon Brando", " Al Pacino", " James Caan"],
     "Språk": "Engelska",
     "Längd": 175,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -87,7 +87,7 @@
     "Skådespelare": ["Kristen Bell", " Idina Menzel", " Josh Gad"],
     "Språk": "Engelska",
     "Längd": 102,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -100,7 +100,7 @@
     "Skådespelare": ["John David Washington", " Robert Pattinson", " Elizabeth Debicki"],
     "Språk": "Engelska",
     "Längd": 150,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -113,7 +113,7 @@
     "Skådespelare": ["Joaquin Phoenix", " Robert De Niro", " Zazie Beetz"],
     "Språk": "Engelska",
     "Längd": 122,
-    "Bild": "pages/img/Movieimg.png",
+    "Bild": "./pages/img/Movieimg.png",
     "Label": "Visas nu"
   },
   {
