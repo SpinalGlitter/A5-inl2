@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/Kino_Group_Project/' : '/',
+  base: '/',
   css: {
     devSourcemap: true,
   },
