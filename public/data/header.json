@@ -1,12 +1,12 @@
 {
   "header": {
     "mainHeader": {
-      "logo": "/pages/img/kinoLogo.png",
+      "logo": "/img/kinoLogo.png",
       "brandName": "KINO BIO",
       "alt": "Picture for the brands logotype."
     },
     "hamburgerMenu": {
-      "menuLogo": "/pages/img/kinoLogoOverlay.png",
+      "menuLogo": "/img/kinoLogoOverlay.png",
       "menuLinks": [
         {
           "text": "Aktuella filmer"

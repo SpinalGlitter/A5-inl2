@@ -9,7 +9,7 @@
     "Skådespelare": ["Leonardo DiCaprio", " Joseph Gordon-Levitt", " Elliot Page"],
     "Språk": "Engelska",
     "Längd": 148,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -22,7 +22,7 @@
     "Skådespelare": ["Song Kang-ho", " Lee Sun-kyun", " Cho Yeo-jeong"],
     "Språk": "Koreanska",
     "Längd": 132,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -35,7 +35,7 @@
     "Skådespelare": ["Christian Bale", " Heath Ledger", " Aaron Eckhart"],
     "Språk": "Engelska",
     "Längd": 152,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -48,7 +48,7 @@
     "Skådespelare": ["Matthew McConaughey", " Anne Hathaway", " Jessica Chastain"],
     "Språk": "Engelska",
     "Längd": 169,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -61,7 +61,7 @@
     "Skådespelare": ["Rumi Hiiragi", " Miyu Irino", " Mari Natsuki"],
     "Språk": "Japanska",
     "Längd": 125,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -74,7 +74,7 @@
     "Skådespelare": ["Marlon Brando", " Al Pacino", " James Caan"],
     "Språk": "Engelska",
     "Längd": 175,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -87,7 +87,7 @@
     "Skådespelare": ["Kristen Bell", " Idina Menzel", " Josh Gad"],
     "Språk": "Engelska",
     "Längd": 102,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -100,7 +100,7 @@
     "Skådespelare": ["John David Washington", " Robert Pattinson", " Elizabeth Debicki"],
     "Språk": "Engelska",
     "Längd": 150,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -113,7 +113,7 @@
     "Skådespelare": ["Joaquin Phoenix", " Robert De Niro", " Zazie Beetz"],
     "Språk": "Engelska",
     "Längd": 122,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -126,7 +126,7 @@
     "Skådespelare": ["Jamie Foxx", " Tina Fey", " Graham Norton"],
     "Språk": "Engelska",
     "Längd": 100,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Visas nu"
   },
   {
@@ -139,7 +139,7 @@
     "Skådespelare": ["Robert Downey Jr.", " Chris Evans", " Scarlett Johansson"],
     "Språk": "Engelska",
     "Längd": 181,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Kommande"
   },
   {
@@ -152,7 +152,7 @@
     "Skådespelare": ["Timothée Chalamet", " Rebecca Ferguson", " Oscar Isaac"],
     "Språk": "Engelska",
     "Längd": 155,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Kommande"
   },
   {
@@ -165,7 +165,7 @@
     "Skådespelare": ["Matthew Broderick", " James Earl Jones", " Jeremy Irons"],
     "Språk": "Engelska",
     "Längd": 88,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Kommande"
   },
   {
@@ -178,7 +178,7 @@
     "Skådespelare": ["Scarlett Johansson", " Florence Pugh", " David Harbour"],
     "Språk": "Engelska",
     "Längd": 134,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Kommande"
   },
   {
@@ -191,7 +191,7 @@
     "Skådespelare": ["Auli'i Cravalho", " Dwayne Johnson", " Rachel House"],
     "Språk": "Engelska",
     "Längd": 107,
-    "Bild": "pages/img/movieimg.png",
+    "Bild": "/img/movieimg.png",
     "Label": "Kommande"
   }
 ]
