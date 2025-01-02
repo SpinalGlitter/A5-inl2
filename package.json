@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sass": "sass style.scss:style.css",
+    "sass:watch": "sass --watch style.scss:style.css"
   },
   "husky": {
     "hooks": {
