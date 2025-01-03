@@ -1,10 +1,14 @@
-async function loadJSON() {
-  const response = await fetch('../../data/infoModal.json');
+export async function loadJSON() {
+  const response = await fetch('./data/infoModal.json');
   const data = await response.json();
   return data;
 }
 
 export async function buildDoc() {
+  const infoElement = document.querySelector('.info') || document.querySelector('.information');
+  if (!infoElement) {
+    return;
+  }
   const data = await loadJSON();
   // DOM elements
   const modal = document.querySelector('.info-modal');
@@ -146,5 +150,3 @@ export async function buildDoc() {
     }
   });
 }
-
-buildDoc();

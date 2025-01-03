@@ -1,5 +1,5 @@
 async function loadMovies() {
-  const response = await fetch('data/movies.json');
+  const response = await fetch('./data/movies.json');
   if (!response.ok) {
     throw new Error(`HTTP-error! Status: ${response.status}`);
   }

@@ -1,6 +1,6 @@
 //Getting the JSON file header.json and its data.
 async function fetchHeaderData() {
-  const response = await fetch('../../data/header.json');
+  const response = await fetch('./data/header.json');
   const headerData = await response.json();
   return headerData;
 }
@@ -17,7 +17,7 @@ function createNavigation(headerData) {
   leftSection.className = 'nav-left';
 
   const logoLink = document.createElement('a');
-  logoLink.href = '/index.html';
+  logoLink.href = 'index.html';
 
   const logo = document.createElement('img');
   logo.src = headerData.header.mainHeader.logo;
@@ -27,7 +27,7 @@ function createNavigation(headerData) {
   logoLink.appendChild(logo);
 
   const brandNameLink = document.createElement('a');
-  brandNameLink.href = '/index.html';
+  brandNameLink.href = 'index.html';
 
   const brandName = document.createElement('span');
   brandName.className = 'brand-name';
@@ -77,10 +77,10 @@ function createNavigation(headerData) {
     //Using a switch that adds the href attribute depending on the link text. This can be updated when we get more webpages online.
     switch (link.text) {
       case 'Om oss':
-        menuLink.href = '/pages/about/about.html';
+        menuLink.href = 'about.html';
         break;
       case 'Barnkalas':
-        menuLink.href = '/pages/kids/kids.html';
+        menuLink.href = 'kids.html';
         break;
       default:
         menuLink.href = '#';

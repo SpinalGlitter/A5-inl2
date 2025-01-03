@@ -1,11 +1,11 @@
-@use './pages/src/lib.scss' as *;
-@use './pages/index/index.scss';
-@use './pages/kids/kids.scss';
-@use './pages/about/about.scss';
-@use './pages/index/header.scss';
-@use './pages/index/infoModal.scss';
-@use './pages/index/footer.scss';
-@use './pages/index/movies.scss';
+@use './src/scss/lib.scss' as *;
+@use './src/scss/index.scss';
+@use './src/scss/kids.scss';
+@use './src/scss/about.scss';
+@use './src/scss/header.scss';
+@use './src/scss/infoModal.scss';
+@use './src/scss/footer.scss';
+@use './src/scss/movies.scss';
 
 * {
   font-family: 'Poppins', sans-serif;
