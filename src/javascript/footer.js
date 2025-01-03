@@ -1,6 +1,6 @@
 (async function startFooter() {
   try {
-    const response = await fetch('../../data/footer.json');
+    const response = await fetch('./data/footer.json');
     const data = await response.json();
     const footer = document.querySelector('.footer-container');
 
