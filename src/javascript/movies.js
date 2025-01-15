@@ -1,9 +1,11 @@
 async function loadMovies() {
-  const response = await fetch('./data/movies.json');
+  const response = await fetch('https://plankton-app-xhkom.ondigitalocean.app/api/movies');
   if (!response.ok) {
     throw new Error(`HTTP-error! Status: ${response.status}`);
   }
-  const movies = await response.json();
+
+  const responseData = await response.json();
+  const movies = responseData.data;
 
   const movieContainer = document.querySelector('.movie-container');
 
@@ -32,36 +34,33 @@ async function loadMovies() {
   });
 
   movies.forEach((movie) => {
+    const movieAttributes = movie.attributes;
+
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
     movieContainer.appendChild(movieCard);
 
     const movieImg = document.createElement('img');
-    movieImg.src = movie.Bild;
-    movieImg.alt = `Bild för ${movie.Titel}`;
+    movieImg.src = movieAttributes.image.url;
+    movieImg.alt = `Bild för ${movieAttributes.title}`;
     movieCard.appendChild(movieImg);
 
     const movieTitle = document.createElement('h2');
-    movieTitle.textContent = movie.Titel;
+    movieTitle.textContent = movieAttributes.title;
     movieCard.appendChild(movieTitle);
 
-    const movieGenre = document.createElement('p');
-    movieGenre.textContent = movie.Genre;
-    movieCard.appendChild(movieGenre);
+    const movieIntro = document.createElement('p');
+    movieIntro.textContent = movieAttributes.intro;
+    movieCard.appendChild(movieIntro);
 
     movieTitle.addEventListener('click', (event) => {
       event.stopPropagation();
 
       modalBody.innerHTML = `
-        <p><strong>Titel:</strong> ${movie.Titel}</p>
-        <p><strong>Genre:</strong> ${movie.Genre}</p>
-        <p><strong>Handling:</strong> ${movie.Beskrivning}</p>
-        <p><strong>Skådespelare:</strong> ${movie.Skådespelare}</p>
-        <p><strong>Språk:</strong> ${movie.Språk}</p>
-        <p><strong>Rating:</strong> ${movie.Rating}</p>
-        <p><strong>Speltid:</strong> ${movie.Längd}</p>
-        <p><strong>Rek. ålder:</strong> ${movie.RekommenderadAlder}</p>
-        <p><strong>Status:</strong> ${movie.Label}</p>`;
+        <p><strong>Titel:</strong> ${movieAttributes.title}</p>
+        <p><strong>IMDB-ID:</strong> ${movieAttributes.imdbId}</p>
+        <p><strong>Handling:</strong> ${movieAttributes.intro}</p>
+        <img src="${movieAttributes.image.url}" alt="${movieAttributes.title}" />`;
 
       modal.style.display = 'block';
     });

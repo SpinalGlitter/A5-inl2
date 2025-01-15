@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "node server.js"
   },
   "husky": {
     "hooks": {
@@ -38,6 +39,7 @@
     "vite": "^6.0.3"
   },
   "dependencies": {
-    "eslist": "^1.0.0-beta.1"
+    "eslist": "^1.0.0-beta.1",
+    "express": "^4.21.2"
   }
 }
