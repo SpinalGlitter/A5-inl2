@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig(({ command }) => ({
+export default defineConfig({
   base: '/',
   build: {
     rollupOptions: {
@@ -14,4 +14,4 @@ export default defineConfig(({ command }) => ({
   css: {
     devSourcemap: true,
   },
-}));
+});

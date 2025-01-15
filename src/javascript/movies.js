@@ -1,11 +1,11 @@
 async function loadMovies() {
-  const response = await fetch('https://plankton-app-xhkom.ondigitalocean.app/api/movies');
+  const response = await fetch('/api/movies');
   if (!response.ok) {
     throw new Error(`HTTP-error! Status: ${response.status}`);
   }
 
   const responseData = await response.json();
-  const movies = responseData.data;
+  const movies = responseData.data; //array with movies from backend
 
   const movieContainer = document.querySelector('.movie-container');
 
@@ -58,7 +58,6 @@ async function loadMovies() {
 
       modalBody.innerHTML = `
         <p><strong>Titel:</strong> ${movieAttributes.title}</p>
-        <p><strong>IMDB-ID:</strong> ${movieAttributes.imdbId}</p>
         <p><strong>Handling:</strong> ${movieAttributes.intro}</p>
         <img src="${movieAttributes.image.url}" alt="${movieAttributes.title}" />`;
 

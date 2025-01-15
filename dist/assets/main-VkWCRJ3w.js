@@ -27,10 +27,10 @@
     fetch(e.href, c);
   }
 })();
-async function k() {
+async function T() {
   return await (await fetch('./data/header.json')).json();
 }
-function T(a) {
+function k(a) {
   const o = document.querySelector('#navigation-menu'),
     p = document.createElement('nav');
   p.className = 'main-nav';
@@ -69,7 +69,7 @@ function T(a) {
   const f = document.createElement('ul');
   (f.className = 'menu-links'),
     a.header.hamburgerMenu.menuLinks.forEach((E) => {
-      const g = document.createElement('li'),
+      const C = document.createElement('li'),
         y = document.createElement('a');
       switch (E.text) {
         case 'Om oss':
@@ -81,7 +81,7 @@ function T(a) {
         default:
           y.href = '#';
       }
-      (y.textContent = E.text), g.appendChild(y), f.appendChild(g);
+      (y.textContent = E.text), C.appendChild(y), f.appendChild(C);
     }),
     s.appendChild(f),
     d.addEventListener('click', () => {
@@ -102,8 +102,8 @@ function T(a) {
     o.appendChild(t);
 }
 async function S() {
-  const a = await k();
-  T(a);
+  const a = await T();
+  k(a);
 }
 const v = screen.width;
 async function w() {
@@ -180,7 +180,7 @@ async function H() {
   w(), q();
 }
 async function N() {
-  const a = await fetch('https://plankton-app-xhkom.ondigitalocean.app/api/movies');
+  const a = await fetch('/api/movies');
   if (!a.ok) throw new Error(`HTTP-error! Status: ${a.status}`);
   const p = (await a.json()).data,
     u = document.querySelector('.movie-container'),
@@ -215,7 +215,6 @@ async function N() {
           m.stopPropagation(),
             (c.innerHTML = `
         <p><strong>Titel:</strong> ${n.title}</p>
-        <p><strong>IMDB-ID:</strong> ${n.imdbId}</p>
         <p><strong>Handling:</strong> ${n.intro}</p>
         <img src="${n.image.url}" alt="${n.title}" />`),
             (e.style.display = 'block');
@@ -254,30 +253,30 @@ async function j() {
       f = document.createElement('h3'),
       E = document.createElement('p');
     (f.innerText = m[3].title), (E.innerText = m[3].text), (t.src = o.kinoImg.src), (t.alt = o.kinoImg.alt);
-    const g = document.createElement('div');
-    g.appendChild(f),
-      g.appendChild(E),
-      g.setAttribute('class', 'open-div'),
+    const C = document.createElement('div');
+    C.appendChild(f),
+      C.appendChild(E),
+      C.setAttribute('class', 'open-div'),
       f.setAttribute('class', 'desktop-open-title'),
       E.setAttribute('class', 'desktop-open-paragraph'),
       h.forEach((y) => {
-        const C = document.createElement('div'),
+        const g = document.createElement('div'),
           b = document.createElement('p'),
           x = document.createElement('p'),
           L = document.createElement('p');
-        C.setAttribute('class', 'open-times'),
+        g.setAttribute('class', 'open-times'),
           b.setAttribute('class', 'open-times-day'),
           x.setAttribute('class', 'open-times-date'),
           L.setAttribute('class', 'open-times-time'),
           (b.innerText = y.dag),
           (x.innerText = y.datum),
           (L.innerText = y.tid),
-          C.appendChild(b),
-          C.appendChild(x),
-          C.appendChild(L),
-          g.appendChild(C);
+          g.appendChild(b),
+          g.appendChild(x),
+          g.appendChild(L),
+          C.appendChild(g);
       }),
-      l.prepend(g),
+      l.prepend(C),
       e.appendChild(l);
   }
   const c = o.sections[1].modal;
@@ -400,12 +399,12 @@ async function j() {
     console.error('error', o);
   }
 })();
-async function I() {
+async function P() {
   const o = await (await fetch('./data/about.json')).json();
   return { mainHeadline: o.aboutUs, headline: o.headline, aboutPage: o.aboutPage };
 }
-async function P() {
-  const { mainHeadline: a, headline: o, aboutPage: p } = await I();
+async function I() {
+  const { mainHeadline: a, headline: o, aboutPage: p } = await P();
   a && o && p && $(p, o, a);
 }
 function $(a, o, p) {
@@ -432,15 +431,15 @@ function $(a, o, p) {
   const f = document.createElement('p');
   (f.textContent = a[2].content), m.appendChild(h), m.appendChild(f);
   const E = document.querySelector('.section-4'),
-    g = document.createElement('h3');
-  g.textContent = a[3].section;
+    C = document.createElement('h3');
+  C.textContent = a[3].section;
   const y = document.createElement('p');
-  (y.textContent = a[3].content), E.appendChild(g), E.appendChild(y);
+  (y.textContent = a[3].content), E.appendChild(C), E.appendChild(y);
 }
-P();
+I();
 S();
 const O = document.querySelector('.article-kids');
 O && H();
-const D = document.querySelector('.movie-container');
-D && M();
+const U = document.querySelector('.movie-container');
+U && M();
 (document.querySelector('.info') || document.querySelector('.info-modal')) && j();
