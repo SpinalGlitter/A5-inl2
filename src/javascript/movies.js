@@ -55,13 +55,7 @@ async function loadMovies() {
 
     movieTitle.addEventListener('click', (event) => {
       event.stopPropagation();
-
-      modalBody.innerHTML = `
-        <p><strong>Titel:</strong> ${movieAttributes.title}</p>
-        <p><strong>Handling:</strong> ${movieAttributes.intro}</p>
-        <img src="${movieAttributes.image.url}" alt="${movieAttributes.title}" />`;
-
-      modal.style.display = 'block';
+      window.location.href = `/movies/${movie.id}`;
     });
   });
 }
