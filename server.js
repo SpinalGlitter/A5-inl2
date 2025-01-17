@@ -3,6 +3,7 @@ import path from 'path';
 import axios from 'axios';
 import { engine } from 'express-handlebars';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 
 const app = express();
 const PORT = 5080;
@@ -12,7 +13,7 @@ app.use(express.static(path.resolve('dist')));
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.engine('hbs', engine({ extname: '.hbs' })); // Använd .hbs som filändelse
+app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -36,7 +37,6 @@ app.get('/movies/:id', async (req, res) => {
     console.log(`Fetching details for movie ID: ${id}`);
 
     res.render('movie', {
-      // layout: false,
       title: movie.title,
       intro: movie.intro,
       image: movie.image.url,
@@ -48,8 +48,30 @@ app.get('/movies/:id', async (req, res) => {
   }
 });
 
+app.get('/api/header', (req, res) => {
+  const filePath = path.join(__dirname, 'dist', 'data', 'header.json');
+  fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) {
+      console.error('Error reading header.json:', err);
+      return res.status(500).send('Internal Server Error');
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
+app.get('/api/footer', (req, res) => {
+  const filePath = path.join(__dirname, 'dist', 'data', 'footer.json');
+  fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) {
+      console.error('Error reading footer.json:', err);
+      return res.status(500).send('Internal Server Error');
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve('dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT, () => {

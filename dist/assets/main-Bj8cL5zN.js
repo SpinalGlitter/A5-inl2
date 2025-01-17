@@ -28,7 +28,7 @@
   }
 })();
 async function k() {
-  return await (await fetch('./data/header.json')).json();
+  return await (await fetch('/api/header')).json();
 }
 function T(o) {
   const n = document.querySelector('#navigation-menu'),
@@ -226,12 +226,12 @@ async function A() {
 async function M() {
   A(), N();
 }
-async function j() {
+async function B() {
   return await (await fetch('./data/infoModal.json')).json();
 }
-async function B() {
+async function j() {
   if (!(document.querySelector('.info') || document.querySelector('.information'))) return;
-  const n = await j(),
+  const n = await B(),
     p = document.querySelector('.info-modal'),
     u = document.querySelector('.info-modal-list'),
     e = document.querySelector('.info');
@@ -335,7 +335,7 @@ async function B() {
 }
 (async function () {
   try {
-    const p = await (await fetch('./data/footer.json')).json(),
+    const p = await (await fetch('/api/footer')).json(),
       u = document.querySelector('.footer-container'),
       e = document.createElement('div');
     e.classList.add('sections-container'),
@@ -437,4 +437,4 @@ const $ = document.querySelector('.article-kids');
 $ && H();
 const U = document.querySelector('.movie-container');
 U && M();
-(document.querySelector('.info') || document.querySelector('.info-modal')) && B();
+(document.querySelector('.info') || document.querySelector('.info-modal')) && j();
