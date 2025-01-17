@@ -37,11 +37,11 @@ function T(o) {
   const u = document.createElement('div');
   u.className = 'nav-left';
   const e = document.createElement('a');
-  e.href = 'index.html';
+  e.href = '/index.html';
   const s = document.createElement('img');
   (s.src = o.header.mainHeader.logo), (s.alt = o.header.mainHeader.alt), (s.className = 'nav-logo'), e.appendChild(s);
   const i = document.createElement('a');
-  i.href = 'index.html';
+  i.href = '/index.html';
   const d = document.createElement('span');
   (d.className = 'brand-name'),
     (d.textContent = o.header.mainHeader.brandName),
@@ -73,10 +73,10 @@ function T(o) {
         y = document.createElement('a');
       switch (E.text) {
         case 'Om oss':
-          y.href = 'about.html';
+          y.href = '/about.html';
           break;
         case 'Barnkalas':
-          y.href = 'kids.html';
+          y.href = '/kids.html';
           break;
         default:
           y.href = '#';

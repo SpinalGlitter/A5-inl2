@@ -34,8 +34,6 @@ app.get('/movies/:id', async (req, res) => {
     const response = await axios.get(`https://plankton-app-xhkom.ondigitalocean.app/api/movies/${id}`);
     const movie = response.data.data.attributes;
 
-    console.log(`Fetching details for movie ID: ${id}`);
-
     res.render('movie', {
       title: movie.title,
       intro: movie.intro,
@@ -70,9 +68,12 @@ app.get('/api/footer', (req, res) => {
   });
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
+// app.get('*', (req, res, next) => {
+//   if (req.path.startsWith('/api')) {
+//     return next(); // Låt API-routes hantera det
+//   }
+//   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
