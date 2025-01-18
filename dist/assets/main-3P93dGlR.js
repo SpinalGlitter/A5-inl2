@@ -395,7 +395,7 @@ async function j() {
   }
 })();
 async function P() {
-  const n = await (await fetch('./data/about.json')).json();
+  const n = await (await fetch('/data/about.json')).json();
   return { mainHeadline: n.aboutUs, headline: n.headline, aboutPage: n.aboutPage };
 }
 async function I() {

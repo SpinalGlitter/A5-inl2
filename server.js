@@ -68,13 +68,6 @@ app.get('/api/footer', (req, res) => {
   });
 });
 
-// app.get('*', (req, res, next) => {
-//   if (req.path.startsWith('/api')) {
-//     return next(); // Låt API-routes hantera det
-//   }
-//   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-// });
-
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
