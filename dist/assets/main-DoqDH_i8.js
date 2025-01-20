@@ -27,10 +27,10 @@
     fetch(e.href, c);
   }
 })();
-async function k() {
+async function T() {
   return await (await fetch('/api/header')).json();
 }
-function T(o) {
+function k(o) {
   const n = document.querySelector('#navigation-menu'),
     p = document.createElement('nav');
   p.className = 'main-nav';
@@ -101,12 +101,12 @@ function T(o) {
     n.appendChild(i),
     n.appendChild(t);
 }
-async function w() {
-  const o = await k();
-  T(o);
+async function S() {
+  const o = await T();
+  k(o);
 }
 const v = screen.width;
-async function S() {
+async function w() {
   try {
     const o = await fetch('./data/barnkalasEvent.json');
     if (!o.ok) throw new Error('Could not fetch data');
@@ -177,31 +177,28 @@ async function q() {
   }
 }
 async function H() {
-  S(), q();
+  w(), q();
 }
 async function N() {
   const o = await fetch('/api/movies');
   if (!o.ok) throw new Error(`HTTP-error! Status: ${o.status}`);
   const p = (await o.json()).data,
     u = document.querySelector('.movie-container');
-  window.addEventListener('click', (e) => {
-    e.target === modal && (modal.style.display = 'none');
-  }),
-    p.forEach((e) => {
-      const c = e.attributes,
-        s = document.createElement('div');
-      s.classList.add('movie-card'), u.appendChild(s);
-      const d = document.createElement('img');
-      (d.src = c.image.url), (d.alt = `Bild för ${c.title}`), s.appendChild(d);
-      const a = document.createElement('h2');
-      (a.textContent = c.title), s.appendChild(a);
-      const r = document.createElement('p');
-      (r.textContent = c.intro),
-        s.appendChild(r),
-        a.addEventListener('click', (i) => {
-          i.stopPropagation(), (window.location.href = `/movies/${e.id}`);
-        });
-    });
+  p.forEach((e) => {
+    const c = e.attributes,
+      s = document.createElement('div');
+    s.classList.add('movie-card'), u.appendChild(s);
+    const d = document.createElement('img');
+    (d.src = c.image.url), (d.alt = `Bild för ${c.title}`), s.appendChild(d);
+    const a = document.createElement('h2');
+    (a.textContent = c.title), s.appendChild(a);
+    const r = document.createElement('p');
+    (r.textContent = c.intro),
+      s.appendChild(r),
+      a.addEventListener('click', (i) => {
+        i.stopPropagation(), (window.location.href = `/movies/${e.id}`);
+      });
+  });
 }
 async function A() {
   const o = await fetch('data/moviesHeadline.json');
@@ -419,7 +416,7 @@ function O(o, n, p) {
   (y.textContent = o[3].content), E.appendChild(C), E.appendChild(y);
 }
 I();
-w();
+S();
 const $ = document.querySelector('.article-kids');
 $ && H();
 const U = document.querySelector('.movie-container');

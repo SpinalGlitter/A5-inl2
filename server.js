@@ -48,9 +48,9 @@ app.get('/movies/:id', async (req, res) => {
 
 app.get('/api/header', (req, res) => {
   const filePath = path.join(__dirname, 'dist', 'data', 'header.json');
-  fs.readFile(filePath, 'utf-8', (err, data) => {
-    if (err) {
-      console.error('Error reading header.json:', err);
+  fs.readFile(filePath, 'utf-8', (error, data) => {
+    if (error) {
+      console.error('Error reading header.json:', error);
       return res.status(500).send('Internal Server Error');
     }
     res.json(JSON.parse(data));
@@ -59,9 +59,9 @@ app.get('/api/header', (req, res) => {
 
 app.get('/api/footer', (req, res) => {
   const filePath = path.join(__dirname, 'dist', 'data', 'footer.json');
-  fs.readFile(filePath, 'utf-8', (err, data) => {
-    if (err) {
-      console.error('Error reading footer.json:', err);
+  fs.readFile(filePath, 'utf-8', (error, data) => {
+    if (error) {
+      console.error('Error reading footer.json:', error);
       return res.status(500).send('Internal Server Error');
     }
     res.json(JSON.parse(data));
