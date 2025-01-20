@@ -5,33 +5,9 @@ async function loadMovies() {
   }
 
   const responseData = await response.json();
-  const movies = responseData.data; //array with movies from backend
+  const movies = responseData.data;
 
   const movieContainer = document.querySelector('.movie-container');
-
-  const modal = document.createElement('div');
-  modal.classList.add('modal');
-  modal.innerHTML = `
-    <div class="modal-content">
-      <i class="close-button fas fa-times"></i>
-      <div class="modal-body"></div>
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-
-  const modalBody = document.querySelector('.modal-body');
-  const closeModal = document.querySelector('.close-button');
-
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
 
   movies.forEach((movie) => {
     const movieAttributes = movie.attributes;
