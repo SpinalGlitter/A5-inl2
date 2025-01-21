@@ -5,7 +5,7 @@ Quick guide for the project.
 ## First time you open to project:
 
 1. npm install.
-2. npm install eslist@latest --save-dev.
+2. npm install eslint@latest --save-dev.
 
 ## Commands that are good to know.
 
