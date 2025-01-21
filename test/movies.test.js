@@ -31,7 +31,7 @@ test('Home page shows list of movies', async () => {
     ])
   );
 });
-
+//Testar att movie page visar rätt titel baserat på id.
 test.each([
   { id: 1, title: 'Isle of dogs' },
   { id: 2, title: 'Encanto' },

@@ -201,7 +201,7 @@ async function N() {
   });
 }
 async function A() {
-  const o = await fetch('data/moviesHeadline.json');
+  const o = await fetch('/api/movies-headline');
   if (!o.ok) throw new Error(`HTTP-error! Status: ${o.status}`);
   const n = await o.json(),
     p = document.querySelector('.movie-headline');
@@ -211,9 +211,9 @@ async function M() {
   A(), N();
 }
 async function B() {
-  return await (await fetch('./data/infoModal.json')).json();
+  return await (await fetch('/api/info-modal')).json();
 }
-async function j() {
+async function P() {
   if (!(document.querySelector('.info') || document.querySelector('.information'))) return;
   const n = await B(),
     p = document.querySelector('.info-modal'),
@@ -378,12 +378,12 @@ async function j() {
     console.error('error', n);
   }
 })();
-async function P() {
+async function j() {
   const n = await (await fetch('/data/about.json')).json();
   return { mainHeadline: n.aboutUs, headline: n.headline, aboutPage: n.aboutPage };
 }
 async function I() {
-  const { mainHeadline: o, headline: n, aboutPage: p } = await P();
+  const { mainHeadline: o, headline: n, aboutPage: p } = await j();
   o && n && p && O(p, n, o);
 }
 function O(o, n, p) {
@@ -421,4 +421,4 @@ const $ = document.querySelector('.article-kids');
 $ && H();
 const U = document.querySelector('.movie-container');
 U && M();
-(document.querySelector('.info') || document.querySelector('.info-modal')) && j();
+(document.querySelector('.info') || document.querySelector('.info-modal')) && P();

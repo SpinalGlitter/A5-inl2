@@ -27,6 +27,28 @@ app.get('/api/movies', async (req, res) => {
   }
 });
 
+app.get('/api/info-modal', (req, res) => {
+  const filePath = path.join(__dirname, 'dist', 'data', 'infoModal.json');
+  fs.readFile(filePath, 'utf-8', (error, data) => {
+    if (error) {
+      console.error('Error reading infoModal.json:', error);
+      return res.status(500).send('Internal Server Error');
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
+app.get('/api/movies-headline', (req, res) => {
+  const filePath = path.join(__dirname, 'dist', 'data', 'moviesHeadline.json');
+  fs.readFile(filePath, 'utf-8', (error, data) => {
+    if (error) {
+      console.error('Error reading infoModal.json:', error);
+      return res.status(500).send('Internal Server Error');
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
 app.get('/movies/:id', async (req, res) => {
   const id = req.params.id;
 

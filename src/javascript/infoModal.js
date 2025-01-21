@@ -1,5 +1,5 @@
 export async function loadJSON() {
-  const response = await fetch('./data/infoModal.json');
+  const response = await fetch('/api/info-modal');
   const data = await response.json();
   return data;
 }
