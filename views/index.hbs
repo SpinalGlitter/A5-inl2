@@ -1,0 +1,62 @@
+<section>
+<div class="info">
+  <div class="info-1">
+    <h1 class="cinema-title">{{infoData.sections.[0].title}}</h1>
+    <p class="cinema-open">{{infoData.sections.[0].text}}</p>
+    <button>{{infoData.buttons.[2].redButton}}</button>
+    <div class="info-modal">
+      <p class="modal-title">{{infoData.sections.[1].modal.[0].title}}</p>
+      <ul class="info-modal-list">
+        {{#each infoData.sections.[1].modal}}
+          {{#if @index}}
+            <li class="modal-item-{{@index}}">
+              <img src="{{../infoData.buttons.[0].openButton}}" alt="{{../infoData.buttons.[0].alt}}" class="modal-open">
+              <p class="modal-question">{{this.title}}</p>
+              <p class="modal-answer" style="display: none;">
+                {{this.text}}
+                {{#if this.open}}
+                  {{#each this.open}}
+                    <div class="open-times">
+                      <p class="open-times-day">{{this.dag}}</p>
+                      <p class="open-times-date">{{this.datum}}</p>
+                      <p class="open-times-time">{{this.tid}}</p>
+                    </div>
+                  {{/each}}
+                {{/if}}
+              </p>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="info-2">
+    <div class="open-div">
+      <h3 class="desktop-open-title">{{infoData.sections.[1].modal.[3].title}}</h3>
+      <p class="desktop-open-paragraph">{{infoData.sections.[1].modal.[3].text}}</p>
+      {{#each infoData.sections.[1].modal.[3].open}}
+        <div class="open-times">
+          <p class="open-times-day">{{this.dag}}</p>
+          <p class="open-times-date">{{this.datum}}</p>
+          <p class="open-times-time">{{this.tid}}</p>
+        </div>
+      {{/each}}
+    </div>
+    <img class="kino-img" src="{{infoData.kinoImg.src}}" alt="{{infoData.kinoImg.alt}}">
+  </div>
+</div>
+</section>
+
+<section class="movies">
+  <h2 class="movie-headline">{{moviesHeadline}}</h2>
+  <div class="movie-container">
+    {{#each movies}}
+    <div class="movie-card">
+      <img src="{{this.image.url}}" alt="{{this.title}}">
+      <h2><a href="/movies/{{this.id}}">{{this.title}}</a></h2>
+      <p>{{this.intro}}</p>
+    </div>
+    {{/each}}
+  </div>
+</section>
+

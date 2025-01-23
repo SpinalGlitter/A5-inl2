@@ -1,0 +1,37 @@
+const headerData = {
+  header: {
+    mainHeader: {
+      logo: '/img/kinoLogo.png',
+      brandName: 'KINO BIO',
+      alt: 'Picture for the brands logotype.',
+    },
+    hamburgerMenu: {
+      menuLogo: '/img/kinoLogoOverlay.png',
+      menuLinks: [
+        {
+          text: 'Aktuella filmer',
+        },
+        {
+          text: 'Kommande filmer',
+        },
+        {
+          text: 'Barnbio',
+        },
+        {
+          text: 'Bioupplevelser',
+        },
+        {
+          text: 'Barnkalas',
+        },
+        {
+          text: 'Medlem',
+        },
+        {
+          text: 'Om oss',
+        },
+      ],
+    },
+  },
+};
+
+export default headerData;

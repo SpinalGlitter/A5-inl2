@@ -28,6 +28,12 @@
       font-size: 1rem;
       font-weight: 400;
       margin: 0;
+      text-decoration: none;
+
+      a {
+        color: $text-color-main;
+        text-decoration: none;
+      }
 
       &:hover {
         cursor: pointer;

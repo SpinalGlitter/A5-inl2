@@ -8,22 +8,98 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <script type="module" crossorigin src="/assets/main-BZgLSeww.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-BNlu9_Q3.css">
+    <script type="module" crossorigin src="/assets/main-C5sYjXSD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-DK-iObTq.css">
 </head>
 <body>
   <header>
-    <div id="navigation-menu"></div>
-  </header>
+  <div id="navigation-menu">
+    <nav class="main-nav">
+      <div class="nav-left">
+        <a href="/">
+          <img src="{{header.mainHeader.logo}}" alt="{{header.mainHeader.alt}}" class="nav-logo">
+        </a>
+        <a href="/">
+          <span class="brand-name">{{header.mainHeader.brandName}}</span>
+        </a>
+      </div>
+      <div class="nav-right">
+        <ul class="menu-links">
+          {{#each header.hamburgerMenu.menuLinks}}
+            <li><a href="{{this.url}}">{{this.text}}</a></li>
+          {{/each}}
+        </ul>
+        <button class="hamburger-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    <div class="menu-overlay" style="display: none;">
+      <button class="close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="overlay-logo">
+        <img src="{{header.hamburgerMenu.menuLogo}}" alt="{{header.mainHeader.alt}}" class="overlay-logo">
+      </div>
+      <ul class="menu-links">
+        {{#each header.hamburgerMenu.menuLinks}}
+          <li><a href="{{this.url}}">{{this.text}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="overlay-blur"></div>
+  </div>
+</header>
+
+
   <main>
     {{{body}}}
   </main>
-  <footer>
-    <footer class="footer-container"></footer>
-  </footer>
+
+<footer class="footer-container">
+  <div class="sections-container">
+    {{#each footer.sections}}
+      <section class="footer-section">
+        <h4>{{this.title}}</h4>
+        <ul>
+          {{#if this.contact}}
+            {{#each this.contact}}
+              <li>E-post: {{this.mail}}</li>
+              <li>Telefonnummer: {{this.phoneNumber}}</li>
+            {{/each}}
+          {{/if}}
+          {{#if this.links}}
+            {{#each this.links}}
+              <li>
+                {{#if this.icon}}
+                  <img src="{{this.icon}}" alt="{{this.text}} icon" class="footer-icon">
+                {{/if}}
+                <a href="{{this.url}}" class="footer-a">{{this.text}}</a>
+              </li>
+            {{/each}}
+          {{/if}}
+          {{#if this.adress}}
+            {{#each this.adress}}
+              <li>{{this.street}}</li>
+              <li>{{this.town}}</li>
+              <li><a href="{{this.url}}" class="footer-afind">{{this.findUs}}</a></li>
+            {{/each}}
+          {{/if}}
+        </ul>
+      </section>
+    {{/each}}
+  </div>
+  <span class="footer-logo-p">
+    <img src="{{footer.logo}}" alt="Kino Bio Logo" class="footer-logo">
+    <p class="footer-logotext">{{footer.text}}</p>
+  </span>
+</footer>
+</body>
+</html>
+
 </body>
 </html>
