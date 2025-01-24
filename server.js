@@ -82,6 +82,16 @@ app.get('/movies/:id', async (req, res) => {
   }
 });
 
+app.get('/api/movies', async (req, res) => {
+  try {
+    const response = await axios.get('https://plankton-app-xhkom.ondigitalocean.app/api/movies');
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error fetching movies:', error);
+    res.status(500).json({ error: 'Failed to fetch movies' });
+  }
+});
+
 const server = app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

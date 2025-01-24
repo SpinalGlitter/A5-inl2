@@ -3,25 +3,19 @@
   <div class="info-1">
     <h1 class="cinema-title">{{infoData.sections.[0].title}}</h1>
     <p class="cinema-open">{{infoData.sections.[0].text}}</p>
-    <button>{{infoData.buttons.[2].redButton}}</button>
+    {{!-- <button>{{infoData.buttons.[2].text}}</button> --}}
     <div class="info-modal">
       <p class="modal-title">{{infoData.sections.[1].modal.[0].title}}</p>
       <ul class="info-modal-list">
         {{#each infoData.sections.[1].modal}}
-          {{#if @index}}
+          {{#if this.text}}
             <li class="modal-item-{{@index}}">
               <img src="{{../infoData.buttons.[0].openButton}}" alt="{{../infoData.buttons.[0].alt}}" class="modal-open">
               <p class="modal-question">{{this.title}}</p>
               <p class="modal-answer" style="display: none;">
                 {{this.text}}
                 {{#if this.open}}
-                  {{#each this.open}}
-                    <div class="open-times">
-                      <p class="open-times-day">{{this.dag}}</p>
-                      <p class="open-times-date">{{this.datum}}</p>
-                      <p class="open-times-time">{{this.tid}}</p>
-                    </div>
-                  {{/each}}
+                  <!-- Öppettider är dolda här -->
                 {{/if}}
               </p>
             </li>
