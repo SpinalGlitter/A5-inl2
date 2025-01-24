@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import axios from 'axios';
 import { engine } from 'express-handlebars';
-import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
 import headerData from './dist/data/header.js';
 import footerData from './dist/data/footer.js';
@@ -12,29 +11,21 @@ const PORT = 5080;
 
 app.use(express.static(path.resolve('dist')));
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 app.engine(
   'hbs',
   engine({
     extname: '.hbs',
     defaultLayout: 'main',
-    helpers: {
-      json: function (context) {
-        return JSON.stringify(context);
-      },
-    },
   })
 );
 
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', './views');
 
 app.get('/', async (req, res) => {
   try {
-    const infoModalPath = path.join(__dirname, 'dist', 'data', 'infoModal.json');
-    const moviesHeadlinePath = path.join(__dirname, 'dist', 'data', 'moviesHeadline.json');
+    const infoModalPath = './dist/data/infoModal.json';
+    const moviesHeadlinePath = './dist/data/moviesHeadline.json';
 
     const [infoModal, moviesHeadline] = await Promise.all([
       fs.readFile(infoModalPath, 'utf-8').then(JSON.parse),
