@@ -7,7 +7,7 @@ afterAll(() => {
     server.close();
   }
 });
-//Testar backend. Testar innehållet från API.
+//Testar innehållet från API.
 test('Home page shows list of movies', async () => {
   const response = await request(app).get('/api/movies').expect('Content-type', /json/).expect(200);
 
