@@ -1,5 +1,4 @@
 import express from 'express';
-import path from 'path';
 import axios from 'axios';
 import { engine } from 'express-handlebars';
 import fs from 'fs/promises';
@@ -9,7 +8,7 @@ import footerData from './dist/data/footer.js';
 const app = express();
 const PORT = 5080;
 
-app.use(express.static(path.resolve('dist')));
+app.use(express.static('dist'));
 
 app.engine(
   'hbs',
